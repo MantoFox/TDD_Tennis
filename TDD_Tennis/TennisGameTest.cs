@@ -31,6 +31,15 @@ namespace TDD_Tennis
             AssertShowResultReturn(expected);
         }
 
+        [Test]
+        [TestCase(1, "Love Fifteen")]
+        public void A03_TennisGame_ShowResult_Player2Score(int player2Score, string expected)
+        {
+            SetPlayer2Score(player2Score);
+
+            AssertShowResultReturn(expected);
+        }
+
         private void AssertShowResultReturn(string expected)
         {
             var result = TennisGame.ShowResult();
@@ -42,6 +51,14 @@ namespace TDD_Tennis
             for (var i = 0; i < player1Score; i++)
             {
                 TennisGame.Player1Score();
+            }
+        }
+
+        private void SetPlayer2Score(int player2Score)
+        {
+            for (var i = 0; i < player2Score; i++)
+            {
+                TennisGame.Player2Score();
             }
         }
     }

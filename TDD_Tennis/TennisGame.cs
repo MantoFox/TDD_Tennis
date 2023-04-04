@@ -12,10 +12,16 @@ namespace TDD_Tennis
         };
 
         private int _player1Score;
+        private int _player2Score;
 
         public void Player1Score()
         {
             _player1Score++;
+        }
+
+        public void Player2Score()
+        {
+            _player2Score++;
         }
 
         public string ShowResult()
@@ -23,6 +29,11 @@ namespace TDD_Tennis
             if (_player1Score > 0)
             {
                 return $"{_scoreDictionary[_player1Score]} Love";
+            }
+
+            if (_player2Score > 0)
+            {
+                return $"Love {_scoreDictionary[_player2Score]}";
             }
             return "Love All";
         }
