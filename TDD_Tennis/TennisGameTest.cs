@@ -16,16 +16,16 @@ namespace TDD_Tennis
         [Test]
         public void A01_TennisGame_ShowResult_LoveAll()
         {
-            var result = TennisGame.ShowResult();
-            result.Should().Be("Love All");
+            var expected = "Love All";
+            AssertShowResultReturn(expected);
         }
 
         [Test]
         public void A02_TennisGame_ShowResult_FifteenLove()
         {
             TennisGame.Player1Score();
-            var result = TennisGame.ShowResult();
-            result.Should().Be("Fifteen Love");
+            var expected = "Fifteen Love";
+            AssertShowResultReturn(expected);
         }
 
         [Test]
@@ -33,8 +33,14 @@ namespace TDD_Tennis
         {
             TennisGame.Player1Score();
             TennisGame.Player1Score();
+            var expected = "Thirty Love";
+            AssertShowResultReturn(expected);
+        }
+
+        private void AssertShowResultReturn(string expected)
+        {
             var result = TennisGame.ShowResult();
-            result.Should().Be("Thirty Love");
+            result.Should().Be(expected);
         }
     }
 }
