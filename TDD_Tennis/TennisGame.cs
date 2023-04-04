@@ -37,10 +37,17 @@ namespace TDD_Tennis
         public string ShowResult()
         {
             var result = _player1Score - _player2Score;
-            if ((_player1Score > 3 || _player2Score > 3) && (Math.Abs(result) == 1))
+            if ((_player1Score > 3 || _player2Score > 3) && (Math.Abs(result) >= 1))
             {
                 var advName = result > 0 ? _player1Name : _player2Name;
-                return $"{advName} Adv";
+                if (Math.Abs(result) == 1)
+                {
+                    return $"{advName} Adv";
+                }
+                else
+                {
+                    return $"{advName} Win";
+                }
             }
 
             if (_player1Score == _player2Score && _player1Score > 2)

@@ -77,6 +77,17 @@ namespace TDD_Tennis
             AssertShowResultReturn(expected);
         }
 
+        [Test]
+        [TestCase(5, 3, "White Win")]
+        [TestCase(3, 5, "Black Win")]
+        public void A07_TennisGame_ShowResult_PlayerWin(int player1Score, int player2Score, string expected)
+        {
+            SetPlayer1Score(player1Score);
+            SetPlayer2Score(player2Score);
+
+            AssertShowResultReturn(expected);
+        }
+
         private void AssertShowResultReturn(string expected)
         {
             var result = TennisGame.ShowResult();
