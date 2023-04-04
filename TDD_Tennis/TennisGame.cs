@@ -5,6 +5,10 @@ namespace TDD_Tennis
 {
     public class TennisGame
     {
+        private readonly string _player1Name;
+
+        private readonly string _player2Name;
+
         private readonly Dictionary<int, string> _scoreDictionary = new Dictionary<int, string>
         {
             {0, "Love"},
@@ -13,9 +17,7 @@ namespace TDD_Tennis
             {3, "Forty"}
         };
 
-        private string _player1Name;
         private int _player1Score;
-        private string _player2Name;
         private int _player2Score;
 
         public TennisGame(string player1Name, string player2Name)
@@ -40,14 +42,7 @@ namespace TDD_Tennis
             if ((_player1Score > 3 || _player2Score > 3) && (Math.Abs(result) >= 1))
             {
                 var advName = result > 0 ? _player1Name : _player2Name;
-                if (Math.Abs(result) == 1)
-                {
-                    return $"{advName} Adv";
-                }
-                else
-                {
-                    return $"{advName} Win";
-                }
+                return Math.Abs(result) == 1 ? $"{advName} Adv" : $"{advName} Win";
             }
 
             if (_player1Score == _player2Score && _player1Score > 2)
