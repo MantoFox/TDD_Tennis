@@ -44,6 +44,16 @@ namespace TDD_Tennis
             AssertShowResultReturn(expected);
         }
 
+        [Test]
+        [TestCase(1, 1, "Fifteen All")]
+        public void A04_TennisGame_ShowResult_BothSameScore(int player1Score, int player2Score, string expected)
+        {
+            SetPlayer1Score(player1Score);
+            SetPlayer2Score(player2Score);
+
+            AssertShowResultReturn(expected);
+        }
+
         private void AssertShowResultReturn(string expected)
         {
             var result = TennisGame.ShowResult();
