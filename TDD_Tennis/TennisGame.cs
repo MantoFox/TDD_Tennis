@@ -6,6 +6,7 @@ namespace TDD_Tennis
     {
         private readonly Dictionary<int, string> _scoreDictionary = new Dictionary<int, string>
         {
+            {0, "Love"},
             {1, "Fifteen"},
             {2, "Thirty"},
             {3, "Forty"}
@@ -26,15 +27,11 @@ namespace TDD_Tennis
 
         public string ShowResult()
         {
-            if (_player1Score > 0)
+            if (_player1Score > 0 || _player2Score > 0)
             {
-                return $"{_scoreDictionary[_player1Score]} Love";
+                return $"{_scoreDictionary[_player1Score]} {_scoreDictionary[_player2Score]}";
             }
 
-            if (_player2Score > 0)
-            {
-                return $"Love {_scoreDictionary[_player2Score]}";
-            }
             return "Love All";
         }
     }
