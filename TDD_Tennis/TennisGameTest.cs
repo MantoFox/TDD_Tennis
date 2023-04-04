@@ -27,5 +27,14 @@ namespace TDD_Tennis
             var result = TennisGame.ShowResult();
             result.Should().Be("Fifteen Love");
         }
+
+        [Test]
+        public void A03_TennisGame_ShowResult_ThirtyLove()
+        {
+            TennisGame.Player1Score();
+            TennisGame.Player1Score();
+            var result = TennisGame.ShowResult();
+            result.Should().Be("Thirty Love");
+        }
     }
 }
