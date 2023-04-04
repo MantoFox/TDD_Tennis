@@ -14,10 +14,18 @@ namespace TDD_Tennis
         }
 
         [Test]
-        public void A01_TennisGame_ShowResult()
+        public void A01_TennisGame_ShowResult_LoveAll()
         {
             var result = TennisGame.ShowResult();
             result.Should().Be("Love All");
+        }
+
+        [Test]
+        public void A02_TennisGame_ShowResult_FifteenLove()
+        {
+            TennisGame.Player1Score();
+            var result = TennisGame.ShowResult();
+            result.Should().Be("Fifteen Love");
         }
     }
 }
