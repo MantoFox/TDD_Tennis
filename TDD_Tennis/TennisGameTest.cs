@@ -10,7 +10,7 @@ namespace TDD_Tennis
         [SetUp]
         public void A00_SetUp()
         {
-            TennisGame = new TennisGame();
+            TennisGame = new TennisGame("White", "Black");
         }
 
         [Test]
@@ -59,6 +59,16 @@ namespace TDD_Tennis
         [TestCase(3, 3, "Deuce")]
         [TestCase(4, 4, "Deuce")]
         public void A05_TennisGame_ShowResult_Deuce(int player1Score, int player2Score, string expected)
+        {
+            SetPlayer1Score(player1Score);
+            SetPlayer2Score(player2Score);
+
+            AssertShowResultReturn(expected);
+        }
+
+        [Test]
+        [TestCase(4, 3, "White Adv")]
+        public void A06_TennisGame_ShowResult_PlayerAdv(int player1Score, int player2Score, string expected)
         {
             SetPlayer1Score(player1Score);
             SetPlayer2Score(player2Score);

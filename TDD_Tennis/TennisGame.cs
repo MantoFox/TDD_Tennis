@@ -12,8 +12,16 @@ namespace TDD_Tennis
             {3, "Forty"}
         };
 
+        private string _player1Name;
         private int _player1Score;
+        private string _player2Name;
         private int _player2Score;
+
+        public TennisGame(string player1Name, string player2Name)
+        {
+            _player1Name = player1Name;
+            _player2Name = player2Name;
+        }
 
         public void Player1Score()
         {
@@ -27,6 +35,11 @@ namespace TDD_Tennis
 
         public string ShowResult()
         {
+            var result = _player1Score - _player2Score;
+            if (_player1Score > 3 && result == 1)
+            {
+                return $"{_player1Name} Adv";
+            }
             if (_player1Score == _player2Score && _player1Score > 2)
             {
                 return "Deuce";
