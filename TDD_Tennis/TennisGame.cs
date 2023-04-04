@@ -4,13 +4,14 @@ namespace TDD_Tennis
 {
     public class TennisGame
     {
-        private int _player1Score;
-
-        private Dictionary<int, string> _scoreDictionary = new Dictionary<int, string>
+        private readonly Dictionary<int, string> _scoreDictionary = new Dictionary<int, string>
         {
             {1, "Fifteen"},
-            {2, "Thirty"}
+            {2, "Thirty"},
+            {3, "Forty"}
         };
+
+        private int _player1Score;
 
         public void Player1Score()
         {
