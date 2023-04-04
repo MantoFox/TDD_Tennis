@@ -21,20 +21,22 @@ namespace TDD_Tennis
         }
 
         [Test]
-        [TestCase(1, "Fifteen Love")]
-        [TestCase(2, "Thirty Love")]
-        [TestCase(3, "Forty Love")]
-        public void A02_TennisGame_ShowResult_Player1Score(int player1Score, string expected)
+        [TestCase(1, 0, "Fifteen Love")]
+        [TestCase(2, 0, "Thirty Love")]
+        [TestCase(3, 0, "Forty Love")]
+        public void A02_TennisGame_ShowResult_Player1Score(int player1Score, int player2Score, string expected)
         {
             SetPlayer1Score(player1Score);
+            SetPlayer2Score(player2Score);
 
             AssertShowResultReturn(expected);
         }
 
         [Test]
-        [TestCase(1, "Love Fifteen")]
-        public void A03_TennisGame_ShowResult_Player2Score(int player2Score, string expected)
+        [TestCase(0, 1, "Love Fifteen")]
+        public void A03_TennisGame_ShowResult_Player2Score(int player1Score, int player2Score, string expected)
         {
+            SetPlayer1Score(player1Score);
             SetPlayer2Score(player2Score);
 
             AssertShowResultReturn(expected);
