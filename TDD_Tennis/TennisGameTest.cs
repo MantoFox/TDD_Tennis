@@ -46,6 +46,7 @@ namespace TDD_Tennis
 
         [Test]
         [TestCase(1, 1, "Fifteen All")]
+        [TestCase(2, 2, "Thirty All")]
         public void A04_TennisGame_ShowResult_BothSameScore(int player1Score, int player2Score, string expected)
         {
             SetPlayer1Score(player1Score);
