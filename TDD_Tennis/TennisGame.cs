@@ -27,6 +27,11 @@ namespace TDD_Tennis
 
         public string ShowResult()
         {
+            if (_player1Score == _player2Score && _player1Score > 2)
+            {
+                return "Deuce";
+            }
+
             if (_player1Score == _player2Score)
             {
                 return $"{_scoreDictionary[_player1Score]} All";
