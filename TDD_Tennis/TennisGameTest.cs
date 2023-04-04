@@ -21,19 +21,12 @@ namespace TDD_Tennis
         }
 
         [Test]
-        public void A02_TennisGame_ShowResult_FifteenLove()
+        [TestCase(1, "Fifteen Love")]
+        [TestCase(2, "Thirty Love")]
+        public void A02_TennisGame_ShowResult_Player1Score(int player1Score, string expected)
         {
-            TennisGame.Player1Score();
-            var expected = "Fifteen Love";
-            AssertShowResultReturn(expected);
-        }
+            SetPlayer1Score(player1Score);
 
-        [Test]
-        public void A03_TennisGame_ShowResult_ThirtyLove()
-        {
-            TennisGame.Player1Score();
-            TennisGame.Player1Score();
-            var expected = "Thirty Love";
             AssertShowResultReturn(expected);
         }
 
@@ -41,6 +34,14 @@ namespace TDD_Tennis
         {
             var result = TennisGame.ShowResult();
             result.Should().Be(expected);
+        }
+
+        private void SetPlayer1Score(int player1Score)
+        {
+            for (var i = 0; i < player1Score; i++)
+            {
+                TennisGame.Player1Score();
+            }
         }
     }
 }
