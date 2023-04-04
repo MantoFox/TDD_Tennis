@@ -34,6 +34,8 @@ namespace TDD_Tennis
 
         [Test]
         [TestCase(0, 1, "Love Fifteen")]
+        [TestCase(0, 2, "Love Thirty")]
+        [TestCase(0, 3, "Love Forty")]
         public void A03_TennisGame_ShowResult_Player2Score(int player1Score, int player2Score, string expected)
         {
             SetPlayer1Score(player1Score);
