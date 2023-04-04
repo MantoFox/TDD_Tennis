@@ -68,6 +68,7 @@ namespace TDD_Tennis
 
         [Test]
         [TestCase(4, 3, "White Adv")]
+        [TestCase(3, 4, "Black Adv")]
         public void A06_TennisGame_ShowResult_PlayerAdv(int player1Score, int player2Score, string expected)
         {
             SetPlayer1Score(player1Score);
